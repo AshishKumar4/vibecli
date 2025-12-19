@@ -1,0 +1,30 @@
+{
+	"name": "@cf-vibesdk/cli",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"bin": {
+		"vibesdk": "./dist/cli.js"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"dev": "bun ./src/index.ts",
+		"build": "rm -rf ./dist && bun ./scripts/build.ts",
+		"test": "bun test",
+		"typecheck": "tsc -p ./tsconfig.json --noEmit"
+	},
+	"dependencies": {
+		"@cf-vibesdk/sdk": "file:../sdk",
+		"chalk": "^5.4.1",
+		"ink": "^5.0.1",
+		"react": "^18.3.1",
+		"string-width": "^7.2.0"
+	},
+	"devDependencies": {
+		"@types/react": "^18.3.12",
+		"bun-types": "^1.2.18",
+		"typescript": "^5.9.3"
+	}
+}
