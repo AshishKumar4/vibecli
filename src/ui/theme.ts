@@ -1,22 +1,48 @@
 import type { CommandDef } from './types';
 
 export const theme = {
-	// TokyoNight-ish pastels on black
-	accent: '#7aa2f7',
-	cyan: '#7dcfff',
-	green: '#9ece6a',
-	magenta: '#bb9af7',
-	orange: '#ff9e64',
-	red: '#f7768e',
-	fg: '#c0caf5',
-	muted: '#565f89',
-	highlightBg: '#33467C',
+	// Cloudflare brand colors
+	accent: '#f38020', // Cloudflare Orange - primary
+	orange: '#f38020', // Cloudflare Orange
+	yellow: '#faae40', // Yellow Orange - secondary
+
+	// Extended palette
+	blue: '#0051c3', // Cloudflare dashboard blue
+	cyan: '#36bef7', // Light blue for types
+	green: '#2ecc71', // Success green
+	red: '#e74c3c', // Error red
+	magenta: '#9b59b6', // Purple for keywords
+	pink: '#faae40', // Use yellow-orange as pink
+
+	// Text colors
+	fg: '#ffffff', // White primary text
+	muted: '#888888', // Gray muted text
+
+	// Chat bubble backgrounds (dark grays)
+	userBubbleBg: '#2a2a2a',
+	assistantBubbleBg: '#333333',
+	systemBubbleBg: '#3d3d3d',
+	toolBubbleBg: '#363636',
+
+	// Highlights and viewer
+	highlightBg: '#4a3520', // Dark orange tint for highlights
+	viewerBg: '#1a1a1a', // Deepest black for code
+
+	// Borders
+	borderActive: '#f38020', // Orange active border
+	borderInactive: '#404041', // Ship Gray inactive border
 };
 
 export const COMMANDS: CommandDef[] = [
 	{ cmd: 'help', usage: '/help', insert: '/help', desc: 'Show help and keyboard shortcuts' },
+	{ cmd: 'login', usage: '/login', insert: '/login', desc: 'Configure API key and base URL' },
 	{ cmd: 'build', usage: '/build <prompt>', insert: '/build', desc: 'Create a new build session' },
 	{ cmd: 'connect', usage: '/connect <agentId>', insert: '/connect', desc: 'Connect to an existing agent' },
+	{ cmd: 'continue', usage: '/continue', insert: '/continue', desc: 'Continue with a recent app' },
+	{ cmd: 'myapps', usage: '/myapps', insert: '/myapps', desc: 'List your apps' },
+	{ cmd: 'apps', usage: '/apps [search]', insert: '/apps', desc: 'List public apps' },
+	{ cmd: 'recent', usage: '/recent', insert: '/recent', desc: 'List recent apps' },
+	{ cmd: 'favorites', usage: '/favorites', insert: '/favorites', desc: 'List favorite apps' },
 	{ cmd: 'preview', usage: '/preview', insert: '/preview', desc: 'Deploy preview' },
 	{ cmd: 'deploy', usage: '/deploy', insert: '/deploy', desc: 'Deploy to Cloudflare' },
 	{ cmd: 'state', usage: '/state', insert: '/state', desc: 'Request conversation state' },
